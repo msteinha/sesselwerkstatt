@@ -1,8 +1,8 @@
 ---
-title: Contact
+title: Kontakt
 featured_image: ''
 omit_header_text: true
-description: We'd love to hear from you
+description: Schreib mir eine Nachricht!
 type: page
 menu: main
 
