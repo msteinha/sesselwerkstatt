@@ -1,5 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'Sesselmanufaktur'
+title = 'Sesselwerkstatt'
 theme = 'ananke'
-background_color_class = 'bg-blue'
