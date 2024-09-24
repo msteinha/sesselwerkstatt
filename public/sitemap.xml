@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/post2/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/posts/post2/</loc>
     <lastmod>2024-09-23T18:44:13+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/post1/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/posts/post1/</loc>
     <lastmod>2024-09-23T18:44:13+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/posts/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/posts/</loc>
     <lastmod>2024-09-23T18:44:13+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/</loc>
     <lastmod>2024-09-23T18:44:13+02:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/categories/</loc>
   </url><url>
-    <loc>https://example.org/pages/gallery/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/pages/gallery/</loc>
   </url><url>
-    <loc>https://example.org/pages/contact/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/pages/contact/</loc>
   </url><url>
-    <loc>https://example.org/pages/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/pages/</loc>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>http://localhost:1313/Sesselwerkstatt/tags/</loc>
   </url>
 </urlset>
