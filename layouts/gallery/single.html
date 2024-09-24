@@ -1,0 +1,51 @@
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "main" }}
+  <head>
+    <link rel="stylesheet" href="/css/gallery.css">
+  </head>
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <h1 class="f1">
+          {{ .Title }}
+        </h1>
+      </header>
+      <div class="gallery-container">
+        <div class="gallery-grid">
+          {{ $galleryDir := "static/images" }} <!-- Correct path for readDir -->
+          {{ range readDir $galleryDir }}
+            <div class="gallery-item">
+              <img src="/images/{{ .Name }}" alt="{{ .Name }}" class="gallery-image" onclick="openModal(this)"/> <!-- Add onclick event to trigger modal -->
+            </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Modal for image enlargement -->
+      <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="enlargedImage">
+        <div id="caption"></div>
+      </div>
+    </article>
+  </div>
+  
+  <!-- Add the JavaScript at the end of the page -->
+  <script>
+    function openModal(image) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("enlargedImage");
+      var captionText = document.getElementById("caption");
+      
+      modal.style.display = "block"; // Show the modal
+      modalImg.src = image.src; // Set the image source
+      //captionText.innerHTML = image.alt; // Set the image caption
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none"; // Hide the modal
+    }
+  </script>
+{{ end }}
+

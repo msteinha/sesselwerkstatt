@@ -16,6 +16,8 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/pages/gallery/</loc>
+  </url><url>
     <loc>http://localhost:1313/pages/contact/</loc>
   </url><url>
     <loc>http://localhost:1313/pages/</loc>

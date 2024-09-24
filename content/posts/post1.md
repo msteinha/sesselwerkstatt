@@ -6,6 +6,3 @@ featured_image = 'images/IMG_4890.JPG'
 +++
 
 Hier Beschreibung des ersten Sessels
-
-
-
