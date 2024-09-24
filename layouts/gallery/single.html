@@ -12,7 +12,7 @@
       </header>
       <div class="gallery-container">
         <div class="gallery-grid">
-          {{ $galleryDir := "static/images" }} <!-- Correct path for readDir -->
+          {{ $galleryDir := "/static/images" }} <!-- Correct path for readDir -->
           {{ range readDir $galleryDir }}
             <div class="gallery-item">
               <img src="/images/{{ .Name }}" alt="{{ .Name }}" class="gallery-image" onclick="openModal(this)"/> <!-- Add onclick event to trigger modal -->
