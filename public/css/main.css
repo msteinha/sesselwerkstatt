@@ -75,7 +75,17 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for effect */
     transition: transform 0.3s ease; /* Optional: Add hover effect */
   }
-  
+
+  .quad-image {
+    width: 100%; /* Make the image responsive to the container width */
+    height: 300px;
+    width: 300px;
+    /*padding-bottom: 100%; /* Ensures the height is the same as the width (1:1 aspect ratio) */
+    object-fit: cover; /* Ensure the image covers the square area while maintaining aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for effect */
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+  }
   /* Hover effect for images */
   .gallery-image:hover {
     transform: scale(1.05); /* Slight zoom on hover */

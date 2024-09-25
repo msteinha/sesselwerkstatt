@@ -9,18 +9,25 @@
     <lastBuildDate>Mon, 23 Sep 2024 18:44:13 +0200</lastBuildDate>
     <atom:link href="https://msteinha.github.io/Sesselwerkstatt/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ich beim Werkeln</title>
+      <title>Holz Restauration</title>
+      <link>https://msteinha.github.io/Sesselwerkstatt/posts/post3/</link>
+      <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
+      <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poster Arbeiten</title>
       <link>https://msteinha.github.io/Sesselwerkstatt/posts/post2/</link>
       <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
       <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post2/</guid>
-      <description>&lt;p&gt;Hier bastel ich gerade an einem Wiener Geflecht.&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
-      <title>Mein erster Sessel</title>
+      <title>Wiener Geflecht</title>
       <link>https://msteinha.github.io/Sesselwerkstatt/posts/post1/</link>
       <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
       <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post1/</guid>
-      <description>&lt;p&gt;Hier Beschreibung des ersten Sessels&lt;/p&gt;</description>
+      <description></description>
     </item>
   </channel>
 </rss>
