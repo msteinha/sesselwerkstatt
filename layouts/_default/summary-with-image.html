@@ -1,35 +1,37 @@
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+<article class="">
+  <div class="db pv0 ph3 ph0-l no-underline dark-gray">
     <div class="flex flex-column flex-row-ns">
       {{ if eq (mod .Params.index 2) 0 }}
         <!-- Even Index: Image on the Right -->
         <div class="blah w-100 w-60-ns pr3-ns">
           <h1 class="f3 fw1 athelas mt0 lh-title">
-            <a href="{{.RelPermalink}}" class="color-inherit dim link">
+            <!--a href="{{.RelPermalink}}" class="color-inherit dim link">
               {{ .Title }}
-            </a>
+            </a-->
+            {{.Title}}
           </h1>
           <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
             {{ .Summary }}
           </div>
-          <a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
+          <!--a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
             {{ $.Param "read_more_copy" | default (i18n "readMore") }}
-          </a>
+          </a-->
         </div>
 
         {{ if $featured_image }}
-          <div class="w-100 w-40-ns mb4 mb0-ns pl3-ns">
-            <a href="{{ .RelPermalink }}" class="db grow">
+          <div class="w-100 w-40-ns mb0 mb0-ns pl3-ns">
+            <!--a href="{{ .RelPermalink }}" class="db grow">
               <img src="{{ $featured_image }}" class="quad-image" alt="image from {{ .Title }}">
-            </a>
+            </a-->
+            <img src="{{ $featured_image }}" class="quad-image" alt="image from {{ .Title }}">
           </div>
         {{ end }}
       {{ else }}
         <!-- Odd Index: Image on the Left -->
         {{ if $featured_image }}
-          <div class="w-100 w-40-ns mb4 mb0-ns pr3-ns">
+          <div class="w-100 w-40-ns mb0 mb0-ns pr3-ns">
             <a href="{{ .RelPermalink }}" class="db grow">
               <img src="{{ $featured_image }}" class="quad-image" alt="image from {{ .Title }}">
             </a>
@@ -45,9 +47,9 @@
           <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
             {{ .Summary }}
           </div>
-          <a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
+          <!--a href="{{.RelPermalink}}" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">
             {{ $.Param "read_more_copy" | default (i18n "readMore") }}
-          </a>
+          </a-->
         </div>
       {{ end }}
     </div>

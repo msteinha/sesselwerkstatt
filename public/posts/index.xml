@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Sesselwerkstatt</title>
-    <link>https://msteinha.github.io/Sesselwerkstatt/posts/</link>
+    <link>http://localhost:1313/Sesselwerkstatt/posts/</link>
     <description>Recent content in Posts on Sesselwerkstatt</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Sep 2024 18:44:13 +0200</lastBuildDate>
-    <atom:link href="https://msteinha.github.io/Sesselwerkstatt/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Sesselwerkstatt/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Holz Restauration</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/posts/post3/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/posts/post3/</link>
       <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post3/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/posts/post3/</guid>
       <description></description>
     </item>
     <item>
       <title>Poster Arbeiten</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/posts/post2/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/posts/post2/</link>
       <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post2/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/posts/post2/</guid>
       <description></description>
     </item>
     <item>
       <title>Wiener Geflecht</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/posts/post1/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/posts/post1/</link>
       <pubDate>Mon, 23 Sep 2024 18:44:13 +0200</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/posts/post1/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/posts/post1/</guid>
       <description></description>
     </item>
   </channel>
