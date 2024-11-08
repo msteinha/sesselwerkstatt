@@ -98,4 +98,33 @@
   div {
     line-height: 0.0; /* Adjust this value as needed */
   }
+
+  h1 {
+    /* font-family: TC Brookleigh; */
+    font-family: Thasadith;
+    font-size: 75px;
+    font-weight: 100;
+    line-height: 78.82px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  
+  h2 {
+    /* font-family: TC Brookleigh; */
+    font-family: Thasadith;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 15px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  
+  p {
+    font-family: Thasadith;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.22em;
+    text-align: justified;
+  }
   
