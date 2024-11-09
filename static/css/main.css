@@ -117,11 +117,20 @@
     text-align: center;
   }
   
-  p {
+  /* p {
     font-family: Thasadith;
     font-size: clamp(0.1rem, 4vw + 1rem, 1.5rem);
     font-weight: 400;
     line-height: clamp(1.0rem, 4vw + 1rem, 2.0rem);
     letter-spacing: 0.22em;
+  } */
+
+  p {
+    font-family: Thasadith;
+    font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+    font-weight: 400;
+    line-height: clamp(1.2rem, 2vw + 1rem, 2.0rem);
+    letter-spacing: clamp(0.05em, 0.1vw, 0.2em);
   }
+  
   
