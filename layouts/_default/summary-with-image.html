@@ -1,23 +1,48 @@
-{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+<!-- {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 
 <article class="">
-  <div class="db pv0 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-        <div class="blah w-100 w-50-ns pr3-ns">
-          <h2>
-            {{ .Title }}
-          </h2>
-          <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-            {{ .Summary }}
+  <div class="db pv0 ph0 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-l">
+          <div class="blah w-100 w-50-l">
+            <h2>
+              {{ .Title }}
+            </h2>
+            <div class="ph3 f6 f5-l lh-copy nested-copy-line-height nested-links">
+              {{ .Summary }}
+            </div>
           </div>
-        </div>
 
         {{ if $featured_image }}
-          <div class="w-100 w-50-ns mb0 mb0-ns pl3-ns">
+          <div class="w-100 w-50-l mb0 mb0-ns">
             <img src="{{ $featured_image }}" alt="image from {{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         {{ end }}
     </div>
   </div>
 </article>
+ -->
 
+
+ {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+
+<article class="">
+  <div class="db pv0 ph0 ph0-l no-underline dark-gray">
+    <!-- Make sure the parent div has a height for centering -->
+    <div class="flex flex-column flex-row-l" style="height: 100%; justify-content: center; align-items: center;">
+      <div class="blah w-100 w-50-l">
+        <h2>
+          {{ .Title }}
+        </h2>
+        <div class="ph3 f6 f5-l lh-copy nested-copy-line-height nested-links">
+          {{ .Summary }}
+        </div>
+      </div>
+
+      {{ if $featured_image }}
+        <div class="w-100 w-50-l mb0 mb0-ns">
+          <img src="{{ $featured_image }}" alt="image from {{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</article>
