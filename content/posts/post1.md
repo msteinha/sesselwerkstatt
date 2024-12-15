@@ -1,9 +1,9 @@
 +++
-title = 'Wiener Geflecht'
+title = 'Bespannung'
 date = 2024-09-23T18:44:13+02:00
 draft = false
-featured_image = 'images/sessel_kombo.png'
-index = 0
+featured_image = 'images/sessel_huette.JPG'
+index = 1
 +++
 
-Wiener Geflecht ist ein zeitloses Design, das Eleganz und Funktionalität vereint. Mit seiner charakteristischen Sechseck-Struktur verleiht es Stühlen und Möbeln Leichtigkeit und stilvollen Charme.
+Eine neue Bespannung von Stühlen ist die ideale Möglichkeit, alten Möbeln neues Leben einzuhauchen. Ob klassische Designs oder moderne Stoffe, gemeinsam helfe ich Ihnen die ideale Bespannung für Ihren Sessel zu finden.

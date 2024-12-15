@@ -8,7 +8,8 @@
     {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
     {{range ($mainSections)}}
     {{ $section_name := . }}
-    {{ $section := where $.Site.RegularPages "Section" "in" $section_name }}
+    {{ $section := where $.Site.RegularPages "Section" "in" $section_name}}
+    {{ $section := sort $section "Params.index" "asc"}}
     {{ $section_count := len $section }}
     {{ if ge $section_count 1 }}
     <div style="background-color: #f5ebe1">

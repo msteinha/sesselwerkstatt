@@ -3,26 +3,36 @@
   <head>
     <link rel="stylesheet" href="{{$.Site.BaseURL}}/css/main.css">
   </head>
-  <div class="flex-l mt2 mw8 center" style="background-color: #f5ebe1;">
-    <article class="center cf pv5 ph3 ph4-ns mw7">
-      <header>
-        <!-- <h1 class="f1">
-          {{ .Title }}
-        </h1> -->
+  <div class="flex-l center" style="background-color: #f5ebe1;">
+    <article class="center cf pv5 ph3 ph4-ns mw8">
+      <header style="text-align: center;">
+        <h1 class="f1">
+          {{ .Params.subtitle }}
+        </h1>
+        <p class="f4 lh-copy mw7 center">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
+        <hr class="mw6 center" style="border: 1px solid #633331; margin-top: 20px; margin-bottom: 20px;">
+        <p class="f4 lh-copy mw7 center">{{ .Params.subdescription }}</p>
+        <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a>
       </header>
-      <div class="gallery-container">
-        <div class="gallery-grid">
-          {{ $baseURL := $.Site.BaseURL}}
-          {{ $galleryDir := "static/images" }} <!-- Correct path for readDir -->
-          {{ range readDir $galleryDir }}
-            <div class="gallery-item">
-              <img src="{{$.Site.BaseURL}}/images/{{ .Name }}" alt="{{ .Name }}" class="gallery-image" onclick="openModal(this)"/> <!-- Add onclick event to trigger modal -->
-            </div>
+      <div class="pa2" style="background-color: #633331;">
+        <div class="row">
+        {{ $images := resources.Match "images/*"}}
+        {{ $columns := 4 }} <!-- Number of columns -->
+        {{ $imagesPerColumn := div (len $images) $columns }}
+
+        {{ range $colIndex := seq 0 (sub $columns 1) }}
+        <div class="column">
+          {{ range $imgIndex, $image := $images }}
+          {{ if eq (mod $imgIndex $columns) $colIndex }}
+          <div class="pa2">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content" onclick="openModal(this)">
+          </div>
+          {{ end }}
           {{ end }}
         </div>
+        {{ end }}
+        </div>
       </div>
-
-      <!-- Modal for image enlargement -->
       <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
         <img class="modal-content" id="enlargedImage">
@@ -31,7 +41,6 @@
     </article>
   </div>
   
-  <!-- Add the JavaScript at the end of the page -->
   <script>
     function openModal(image) {
       var modal = document.getElementById("imageModal");
@@ -49,4 +58,5 @@
     }
   </script>
 {{ end }}
+ 
 
