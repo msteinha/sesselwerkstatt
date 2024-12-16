@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Sesselwerkstatt</title>
-    <link>https://msteinha.github.io/Sesselwerkstatt/pages/</link>
+    <link>https://www.sesselwerkstatt.com/pages/</link>
     <description>Recent content in Pages on Sesselwerkstatt</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://msteinha.github.io/Sesselwerkstatt/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.sesselwerkstatt.com/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kontakt</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/contact/</link>
+      <link>https://www.sesselwerkstatt.com/pages/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/contact/</guid>
+      <guid>https://www.sesselwerkstatt.com/pages/contact/</guid>
       <description>&lt;form class=&#34;custom-font-white font-Thasadith&#34; accept-charset=&#34;UTF-8&#34; action=&#34;https://formspree.io/f/xvgojggw&#34; method=&#34;POST&#34; role=&#34;form&#34;&gt;&#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34;  for=&#34;name&#34;&gt;Name&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;name&#34;/&gt;&#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;email&#34;&gt;E-Mail Adresse&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;email&#34;/&gt;&#xA;    &#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;message&#34;&gt;Nachricht&lt;/label&gt;&#xA;    &lt;textarea id=&#34;message&#34; name=&#34;message&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn h4&#34; aria-labelledby=&#34;message&#34;&gt;&lt;/textarea&gt;&#xA;&#xA;    &lt;input class=&#34;db w-100 mv2 custom-font-white-90 pa3 bn hover-shadow bg-animate custom-bg-light-red&#34; type=&#34;submit&#34; value=&#34;Senden&#34; /&gt;&#xA;&#xA;&lt;/form&gt;</description>
     </item>
     <item>
       <title>Projekte</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/gallery/</link>
+      <link>https://www.sesselwerkstatt.com/pages/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/gallery/</guid>
+      <guid>https://www.sesselwerkstatt.com/pages/gallery/</guid>
       <description></description>
     </item>
   </channel>
