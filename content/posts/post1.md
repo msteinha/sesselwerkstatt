@@ -6,4 +6,4 @@ featured_image = 'images/sessel_huette.JPG'
 index = 1
 +++
 
-Eine neue Bespannung von Stühlen ist die ideale Möglichkeit, alten Möbeln neues Leben einzuhauchen. Ob klassische Designs oder moderne Stoffe, gemeinsam helfe ich Ihnen die ideale Bespannung für Ihren Sessel zu finden.
+Eine neue Bespannung von Stühlen ist die ideale Möglichkeit, alten Möbeln neues Leben einzuhauchen. Ob klassische Designs oder moderne Stoffe, ich helfe Ihnen die ideale Bespannung für Ihren Sessel zu finden.

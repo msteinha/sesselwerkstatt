@@ -3,18 +3,18 @@
   <head>
     <link rel="stylesheet" href="{{$.Site.BaseURL}}/css/main.css">
   </head>
+
+  <!-- Title and Description Section -->
+  <div class="custom-bg-white tc pv4 w-100 ph3 center" style="text-align: center;">
+    <h1 class="f1">{{ .Params.subtitle }}</h1>
+    <p class="f4 lh-copy mw7 center">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
+  </div>
+
+  <!-- Main Content Section -->
   <div class="flex-l center" style="background-color: #f5ebe1;">
-    <article class="center cf pv5 ph3 ph4-ns mw8">
-      <header style="text-align: center;">
-        <h1 class="f1">
-          {{ .Params.subtitle }}
-        </h1>
-        <p class="f4 lh-copy mw7 center">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
-        <!-- <hr class="mw6 center" style="border: 1px solid #633331; margin-top: 20px; margin-bottom: 20px;">
-        <p class="f4 lh-copy mw7 center">{{ .Params.subdescription }}</p>
-        <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a> -->
-      </header>
-      <div class="pa2" style="background-color: #633331;">
+    <!-- <article class="center cf pv4 ph3 mw8"> -->
+    <article class="center cf ph3 mw8">
+      <div class="pa2 pv3" style="background-color: #633331;">
         <div class="row">
         {{ $images := resources.Match "images/gallery/*"}}
         {{ $columns := 4 }} <!-- Number of columns -->

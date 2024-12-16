@@ -231,10 +231,6 @@ p {
   background-color: #AA5B5B;
 }
 
-/* .custom-bg-light-red:hover {
-  background-color:#633331;
-} */
-
 .custom-border-color {
   border-color:#633331;
 }
@@ -250,3 +246,15 @@ p {
   color: #633331;
 }
 
+.featured-image-container {
+  width: auto; /* The width adjusts based on the image's aspect ratio */
+  height: 40%; /* The image takes 40% of the header's height */
+  max-height: 300px; /* Optional: Set a max height for larger screens */
+  width: auto;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  border-radius: 50%; 
+  overflow: hidden;
+}
+
+/* width: 50%; max-width: 500px; height: auto; margin: 0 auto; border-radius: 50%; overflow: hidden; */
