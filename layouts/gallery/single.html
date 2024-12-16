@@ -10,13 +10,13 @@
           {{ .Params.subtitle }}
         </h1>
         <p class="f4 lh-copy mw7 center">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
-        <hr class="mw6 center" style="border: 1px solid #633331; margin-top: 20px; margin-bottom: 20px;">
+        <!-- <hr class="mw6 center" style="border: 1px solid #633331; margin-top: 20px; margin-bottom: 20px;">
         <p class="f4 lh-copy mw7 center">{{ .Params.subdescription }}</p>
-        <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a>
+        <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a> -->
       </header>
       <div class="pa2" style="background-color: #633331;">
         <div class="row">
-        {{ $images := resources.Match "images/*"}}
+        {{ $images := resources.Match "images/gallery/*"}}
         {{ $columns := 4 }} <!-- Number of columns -->
         {{ $imagesPerColumn := div (len $images) $columns }}
 
@@ -25,7 +25,7 @@
           {{ range $imgIndex, $image := $images }}
           {{ if eq (mod $imgIndex $columns) $colIndex }}
           <div class="pa2">
-            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content" onclick="openModal(this)">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content img-responsive" onclick="openModal(this)">
           </div>
           {{ end }}
           {{ end }}
@@ -36,8 +36,12 @@
       <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
         <img class="modal-content" id="enlargedImage">
-        <div id="caption"></div>
+        <!-- <div id="caption"></div> -->
       </div>
+      <footer style="text-align: center;">
+        <p class="f4 lh-copy mw7 center">{{ .Params.subdescription }}</p>
+        <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a>
+      </footer>
     </article>
   </div>
   

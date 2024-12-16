@@ -1,7 +1,7 @@
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 
 <article class="h-100">
-  <div class="db pv0 ph0 ph0-l no-underline dark-gray h-100">
+  <div class="db no-underline h-100">
     <!-- Parent div ensures equal scaling -->
     <div class="flex flex-column flex-row-l h-100" style="align-items: stretch;">
       <!-- Text Block -->
@@ -13,7 +13,7 @@
           <div class="lh-copy nested-copy-line-height nested-links">
             <p>{{ .Summary }}</p>
           </div>
-          <a href="{{$.Site.BaseURL}}pages/gallery/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Projekte ansehen</a>
+          <a href="{{$.Site.BaseURL}}pages/gallery/" class="font-Thasadith ba custom-border-color custom-bg-white br2 dib f4 link mb4 ph3 pv2 custom-button-text">Projekte ansehen</a>
         </div>
       </div>
 

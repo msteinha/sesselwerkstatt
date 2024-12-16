@@ -8,4 +8,4 @@ type: contact_page
 menu: main
 
 ---
-{{< form-contact action="https://example.com"  >}}
+{{< form-contact action="https://formspree.io/f/xvgojggw" method="POST">}}

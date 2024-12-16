@@ -6,6 +6,6 @@ featured_image = 'images/sessel_kombo.png'
 index = 0
 +++
 
-Wiener Geflecht vereint Eleganz und Funktionalität. Mit seiner charakteristischen Sechseck-Struktur verleiht es Stühlen und Möbeln Leichtigkeit und stilvollen Charme. In Handarbeit und mit hochwertigen Materialien erneure ich Wiener Geflecht.
+Wiener Geflecht vereint Eleganz und Funktionalität. Mit seiner charakteristischen Sechseck-Struktur verleiht es Stühlen und Möbeln Leichtigkeit und stilvollen Charme. In Handarbeit und mit hochwertigen Materialien erneuere ich Wiener Geflecht.
 
 
