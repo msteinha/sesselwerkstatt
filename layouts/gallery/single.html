@@ -7,7 +7,7 @@
   <!-- Title and Description Section -->
   <div class="custom-bg-white tc pv4 w-100 ph3 center" style="text-align: center;">
     <h1 class="f1">{{ .Params.subtitle }}</h1>
-    <p class="f4 lh-copy mw7 center">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
+    <p class="f4 lh-copy mw7 center" style="text-align: center;">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
   </div>
 
   <!-- Main Content Section -->
@@ -25,7 +25,7 @@
           {{ range $imgIndex, $image := $images }}
           {{ if eq (mod $imgIndex $columns) $colIndex }}
           <div class="pa2">
-            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content img-responsive" onclick="openModal(this)">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content img-responsive"> <!-- onclick="openModal(this)"> -->
           </div>
           {{ end }}
           {{ end }}
@@ -39,7 +39,7 @@
         <!-- <div id="caption"></div> -->
       </div>
       <footer style="text-align: center;">
-        <p class="f4 lh-copy mw7 center">{{ .Params.subdescription }}</p>
+        <p class="f4 lh-copy mw7 center" style="text-align: center;">{{ .Params.subdescription }}</p>
         <a href="{{$.Site.BaseURL}}pages/contact/" class="font-Thasadith ba custom-border-color custom-bg-white br2 color-inherit dib f4 link mb4 ph3 pv2 custom-button-text">Anfrage senden</a>
       </footer>
     </article>

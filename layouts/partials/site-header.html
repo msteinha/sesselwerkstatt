@@ -3,7 +3,7 @@
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
   <div class="{{ .Site.Params.cover_dimming_class | default "#e1dbdb 50%" }}">
     {{ partial "site-navigation.html" .}}
-  <header class="tc-l pv2 pv3-l ph3 ph4-ns" style="max-height: 600px; background: linear-gradient(to bottom, #f5ebe1 50%, #633331 50%);">
+  <header class="tc-l pv2 pv3-l ph3 ph4-ns" style="background: linear-gradient(to bottom, #f5ebe1 50%, #633331 50%);">
       {{ if $featured_image }}
       <div class="pv3">
         <h1 class="f1"> 
@@ -14,10 +14,10 @@
         <img src="{{ $featured_image }}" alt="Featured Image" style="width: 100%; height: 100%; object-fit: cover;">
       </div>      
       {{ end }}
-      <div class="pv3 w-100 w-90-ns w-60-l center">
-      {{ with .Params.description }}
-      <p style="text-align: center; color:#f5ebe1">{{.}}</p>
-      {{ end }}
+      <div class="pv1 w-100 w-50-l w-80-m center">
+        {{ with .Params.description }}
+        <p style="color:#f5ebe1">{{.}}</p>
+        {{ end }}
       </div>
     </div>
   </header>

@@ -1,4 +1,4 @@
-baseURL = 'https://www.sesselwerkstatt.com'
+baseURL = 'https://msteinha.github.io/Sesselwerkstatt/'
 languageCode = 'en-us'
 defaultContentLanguage = 'de'
 title = 'Sesselwerkstatt'
@@ -9,6 +9,16 @@ theme = 'ananke'
     name = "Home"
     url = "/"
     weight = 1
+
+  [[menu.main]]
+    name = "Projekte"
+    url = "/pages/gallery"
+    weight = 2
+
+  [[menu.main]]
+    name = "Kontakt"
+    url = "/pages/contact"
+    weight = 3
 
 [params]
     mainSections = ["posts"]
