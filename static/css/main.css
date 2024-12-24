@@ -259,3 +259,9 @@ p {
   font-size: 3.5rem;
 }
 /* width: 50%; max-width: 500px; height: auto; margin: 0 auto; border-radius: 50%; overflow: hidden; */
+
+@media (max-width: 48em) {
+  .footer-links {
+    justify-content: center !important;
+  }
+}

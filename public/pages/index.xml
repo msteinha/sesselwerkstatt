@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Sesselwerkstatt</title>
-    <link>https://msteinha.github.io/Sesselwerkstatt/pages/</link>
+    <link>http://localhost:1313/Sesselwerkstatt/pages/</link>
     <description>Recent content in Pages on Sesselwerkstatt</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://msteinha.github.io/Sesselwerkstatt/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/Sesselwerkstatt/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Datenschutzerklärung</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/privacy/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/pages/privacy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/privacy/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/pages/privacy/</guid>
       <description>&lt;h3 id=&#34;1-verantwortliche-stelle&#34;&gt;1. Verantwortliche Stelle&lt;/h3&gt;&#xA;&lt;p&gt;Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten auf dieser Website ist:&#xA;Ing. Herbert Steinhauser&#xA;&lt;a href=&#34;mailto:info@sesselwerkstatt.com&#34;&gt;info@sesselwerkstatt.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;2-erhebung-und-speicherung-personenbezogener-daten&#34;&gt;2. Erhebung und Speicherung personenbezogener Daten&lt;/h3&gt;&#xA;&lt;p&gt;Beim Besuch unserer Website erheben wir personenbezogene Daten nur, wenn Sie uns diese freiwillig über unser Kontaktformular zur Verfügung stellen.&lt;/p&gt;&#xA;&lt;h4 id=&#34;21-kontaktformular-formspark&#34;&gt;2.1. Kontaktformular (Formspark)&lt;/h4&gt;&#xA;&lt;p&gt;Für unser Kontaktformular verwenden wir den Dienst Formspark. Wenn Sie das Kontaktformular ausfüllen und absenden, werden die folgenden Daten verarbeitet:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ihr Name&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ihre E-Mail-Adresse&lt;/p&gt;</description>
     </item>
     <item>
       <title>Impressum</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/imprint/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/pages/imprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/imprint/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/pages/imprint/</guid>
       <description>&lt;p&gt;Angaben gemäß §5 ECG&lt;/p&gt;&#xA;&lt;p style=&#34;line-height: clamp(1.2rem, 1.5vw + 1rem, 1.5rem);&#34;&gt;&#xA;  Ing. Herbert Steinhauser&lt;br&gt;&#xA;  Bahnstraße 22&lt;br&gt;&#xA;  3580 Horn&lt;br&gt;&#xA;  Österreich&lt;br&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  E-Mail: &lt;a href=&#34;mailto:info@sesselwerkstatt.com&#34;&gt;info@sesselwerkstatt.com&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  Inhaltlich Verantwortlicher gemäß §5 ECG: Herbert Steinhauser&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kontakt</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/contact/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/pages/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/contact/</guid>
-      <description>&lt;form class=&#34;custom-font-white font-Thasadith&#34; accept-charset=&#34;UTF-8&#34; action=&#34;https://submit-form.com/P6J01sJGD&#34; method=&#34;POST&#34; role=&#34;form&#34;&gt;&#xA;    &lt;input type=&#34;hidden&#34; name=&#34;_redirect&#34; value=&#34;https://sesselwerkstatt.com/&#34;/&gt;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34;  for=&#34;name&#34;&gt;Name&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;name&#34;/&gt;&#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;email&#34;&gt;E-Mail Adresse&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;email&#34;/&gt;&#xA;    &#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;message&#34;&gt;Nachricht&lt;/label&gt;&#xA;    &lt;textarea id=&#34;message&#34; name=&#34;message&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn h5&#34; aria-labelledby=&#34;message&#34;&gt;&lt;/textarea&gt;&#xA;&#xA;    &lt;div class=&#34;mt0&#34; style=&#34;display: flex; align-items: center;&#34;&gt;&#xA;      &lt;input type=&#34;checkbox&#34; id=&#34;privacy&#34; name=&#34;privacy&#34; required style=&#34;margin-right: 10px; margin-top: 10px;&#34;&gt;&#xA;      &lt;label for=&#34;privacy&#34; class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34;&gt;&#xA;          Ich stimme der &lt;a href=&#34;https://msteinha.github.io/Sesselwerkstatt/Sesselwerkstatt/pages/privacy/&#34; target=&#34;_blank&#34; class=&#34;underline&#34;&gt;Datenschutzerklärung&lt;/a&gt; zu.&#xA;      &lt;/label&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &lt;input class=&#34;db w-100 mv2 custom-font-white-90 pa3 bn hover-shadow bg-animate custom-bg-light-red&#34; type=&#34;submit&#34; value=&#34;Senden&#34; /&gt;&#xA;&#xA;&lt;/form&gt;</description>
+      <guid>http://localhost:1313/Sesselwerkstatt/pages/contact/</guid>
+      <description>&lt;form class=&#34;custom-font-white font-Thasadith&#34; accept-charset=&#34;UTF-8&#34; action=&#34;https://submit-form.com/P6J01sJGD&#34; method=&#34;POST&#34; role=&#34;form&#34;&gt;&#xA;    &lt;input type=&#34;hidden&#34; name=&#34;_redirect&#34; value=&#34;https://sesselwerkstatt.com/&#34;/&gt;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34;  for=&#34;name&#34;&gt;Name&lt;/label&gt;&#xA;    &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;name&#34;/&gt;&#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;email&#34;&gt;E-Mail Adresse&lt;/label&gt;&#xA;    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn&#34;  required placeholder=&#34; &#34;  aria-labelledby=&#34;email&#34;/&gt;&#xA;    &#xA;&#xA;    &lt;label class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34; for=&#34;message&#34;&gt;Nachricht&lt;/label&gt;&#xA;    &lt;textarea id=&#34;message&#34; name=&#34;message&#34; class=&#34;w-100 f5 pv3 ph3 bg-light-gray bn h5&#34; aria-labelledby=&#34;message&#34;&gt;&lt;/textarea&gt;&#xA;&#xA;    &lt;div class=&#34;mt0&#34; style=&#34;display: flex; align-items: center;&#34;&gt;&#xA;      &lt;input type=&#34;checkbox&#34; id=&#34;privacy&#34; name=&#34;privacy&#34; required style=&#34;margin-right: 10px; margin-top: 10px;&#34;&gt;&#xA;      &lt;label for=&#34;privacy&#34; class=&#34;custom-font-white font-Thasadith f6 b db mb1 mt3 sans-serif white&#34;&gt;&#xA;          Ich stimme der &lt;a href=&#34;http://localhost:1313/Sesselwerkstatt/Sesselwerkstatt/pages/privacy/&#34; target=&#34;_blank&#34; class=&#34;underline&#34;&gt;Datenschutzerklärung&lt;/a&gt; zu.&#xA;      &lt;/label&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;    &lt;input class=&#34;db w-100 mv2 custom-font-white-90 pa3 bn hover-shadow bg-animate custom-bg-light-red&#34; type=&#34;submit&#34; value=&#34;Senden&#34; /&gt;&#xA;&#xA;&lt;/form&gt;</description>
     </item>
     <item>
       <title>Projekte</title>
-      <link>https://msteinha.github.io/Sesselwerkstatt/pages/gallery/</link>
+      <link>http://localhost:1313/Sesselwerkstatt/pages/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://msteinha.github.io/Sesselwerkstatt/pages/gallery/</guid>
+      <guid>http://localhost:1313/Sesselwerkstatt/pages/gallery/</guid>
       <description></description>
     </item>
   </channel>
