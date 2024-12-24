@@ -4,6 +4,11 @@ defaultContentLanguage = 'de'
 title = 'Sesselwerkstatt'
 theme = 'ananke'
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [menu]
   [[menu.main]]
     name = "Home"

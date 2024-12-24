@@ -5,7 +5,13 @@
   </head>
 
   <!-- Main Content Section -->
-  <div class="flex-l center" style="background-color: #f5ebe1;">
+  <div class="center" style="background-color: #f5ebe1;">
+    <div class="center mw8 ph3 pv3" style="line-height: 1.0">
+      <div class="center pb3">
+        <h2>{{ .Params.title }}</h2>
+      </div>
+      {{ .Content }}
+  </div>
   </div>
 {{ end }}
  
