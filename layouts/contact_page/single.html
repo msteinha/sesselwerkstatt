@@ -15,9 +15,9 @@
   
   <!-- Main Content Section -->
   <div class="flex-l center" style="background-color: #f5ebe1;">
-    <div class="center cf pv3 ph3 ph4-ns mw8 flex">
+    <div class="center cf pv3 ph3 ph4-ns mw8 content-flex">
       <div class="w-50-l pl3 ph0">
-        <img src="{{$.Site.BaseURL}}images/papa_contact.jpg" alt="Kontaktbild" style="object-fit: cover;">
+        <img src="{{$.Site.BaseURL}}images/papa_contact.jpg" alt="Kontaktbild" style="object-fit: cover;" loading="lazy">
       </div>
 
       <div class="nested-copy-line-height lh-copy f4 nested-links ph3 {{ $.Param "text_color" | default "mid-gray" }} w-50-l w-100-m" style="background-color: #633331">
@@ -27,18 +27,19 @@
   </div>
   <style>
     /* Base Flex Layout */
-    .flex {
+    /* Content Specific Flex Layout */
+    .content-flex {
       display: flex;
-      flex-wrap: wrap; /* Ensure children wrap to the next row if space is limited */
+      flex-wrap: wrap;
     }
 
     /* Responsive Breakpoint for Smaller Screens */
     @media screen and (max-width: 768px) {
-      .flex {
-        flex-direction: column; /* Stack items vertically */
+      .content-flex {
+        flex-direction: column;
       }
       .w-50-l {
-        width: 100%; /* Make both image and content full-width */
+        width: 100%;
       }
     }
   </style>

@@ -1,12 +1,5 @@
 <footer class="{{ .Site.Params.background_color_class | default "#633331" }} bottom-0 w-100 pa3" role="contentinfo" style="background-color: #633331;">
-  <div class="flex justify-end items-center flex-wrap">
-    <!-- <a class="f4 fw4 custom-font-white-90 font-Thasadith no-underline dn dib-ns pv2 ph3" href="{{ .Site.Home.Permalink }}" >
-      &copy; {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}
-    </a>
-    <div>
-      {{ partial "social-follow.html" . }}
-    </div> -->
-    <div class="w-100 w-auto-ns tc tr-ns mt3 mt0-ns footer-links" style="display: flex; gap: 0;">
+    <div class="flex justify-end-ns justify-center">
       <a class="f4 fw4 custom-font-white-90 font-Thasadith no-underline pv2 ph3" href="{{$.Site.BaseURL}}/pages/imprint/" style="margin-right: 0;">
         Impressum
       </a>
@@ -14,5 +7,4 @@
         Datenschutzerklärung
       </a>
     </div>
-  </div>
 </footer>

@@ -8,8 +8,7 @@ type: privacy
 
 ### 1. Verantwortliche Stelle
 Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten auf dieser Website ist:
-Ing. Herbert Steinhauser
-info@sesselwerkstatt.com
+Ing. Herbert Steinhauser (info@sesselwerkstatt.com)
 
 ### 2. Erhebung und Speicherung personenbezogener Daten
 Beim Besuch unserer Website erheben wir personenbezogene Daten nur, wenn Sie uns diese freiwillig über unser Kontaktformular zur Verfügung stellen.
@@ -26,9 +25,7 @@ Für unser Kontaktformular verwenden wir den Dienst Formspark. Wenn Sie das Kont
 Diese Daten werden direkt an uns übermittelt und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte findet nicht statt. Formspark fungiert dabei lediglich als technischer Dienstleister und speichert Ihre Daten nicht dauerhaft. Weitere Informationen finden Sie in der Datenschutzerklärung von Formspark.
 
 #### 2.2. Verwendung von Cloudflare
-Unsere Website verwendet den Dienst Cloudflare, um Schutz vor Angriffen und eine optimierte Auslieferung der Website-Inhalte zu gewährleisten. Dabei verarbeitet Cloudflare technische Daten, wie:
-Ihre IP-Adresse
-Informationen zu Ihrem Browser und Betriebssystem
+Unsere Website verwendet den Dienst Cloudflare, um Schutz vor Angriffen und eine optimierte Auslieferung der Website-Inhalte zu gewährleisten. Dabei verarbeitet Cloudflare technische Daten, wie Ihre IP-Adresse, Informationen zu Ihrem Browser und Betriebssystem.
 Diese Daten werden ausschließlich zur Sicherstellung des ordnungsgemäßen Betriebs unserer Website genutzt. Eine Weitergabe an Dritte findet auch hier nicht statt. Weitere Informationen finden Sie in der Datenschutzerklärung von Cloudflare.
 
 ### 3. Rechtsgrundlagen der Datenverarbeitung
