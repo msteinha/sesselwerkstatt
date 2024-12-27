@@ -6,7 +6,7 @@
     
     <title>Projekte | Sesselwerkstatt</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Ein Auszug aus meinen Projekten. Aus Alt mach Neu.">
+    <meta name="description" content="Wiener Geflecht - Bespannung: in Handarbeit und mit hochwertigen Materialien werden alte Möbel zu neuem Leben erweckt.">
     <meta name="generator" content="Hugo 0.134.3">
     
     
@@ -24,7 +24,8 @@
     
 
     
-      
+      <link rel="shortcut icon" media="(prefers-color-scheme: light)" href="/images/favicon_light.png" type="image/x-icon" />
+<link rel="shortcut icon" media="(prefers-color-scheme: dark)" href="/images/favicon_dark.png" type="image/x-icon" />
 
     
 
@@ -57,9 +58,11 @@
   <header>
     <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation" style="background-color: #f5ebe1;">
-  <div class="flex-l justify-between items-center center">
-    
-    <div class="flex-l items-center">
+  <div class="flex justify-between items-center center">
+    <div class="flex items-center">
+      <a href="/" class="ph3">
+        <img src="/images/logo_red.png" alt="Logo" style="height: 40px; width: auto;">
+      </a>
       
 
       
@@ -384,8 +387,14 @@
     }
 
     function navigateImage(direction) {
-      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-      document.getElementById("enlargedImage").src = images[currentImageIndex];
+      const img = document.getElementById("enlargedImage");
+      img.classList.add('fade');
+      
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        img.src = images[currentImageIndex];
+        img.classList.remove('fade');
+      }, 300); 
     }
 
     function closeModal() {

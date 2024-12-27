@@ -89,8 +89,14 @@
     }
 
     function navigateImage(direction) {
-      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-      document.getElementById("enlargedImage").src = images[currentImageIndex];
+      const img = document.getElementById("enlargedImage");
+      img.classList.add('fade');
+      
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        img.src = images[currentImageIndex];
+        img.classList.remove('fade');
+      }, 300); // Match this with the CSS transition duration (0.3s = 300ms)
     }
 
     function closeModal() {

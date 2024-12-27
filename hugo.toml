@@ -28,3 +28,5 @@ theme = 'ananke'
 [params]
     mainSections = ["posts"]
     description = "Wiener Geflecht - Bespannung: in Handarbeit und mit hochwertigen Materialien werden alte Möbel zu neuem Leben erweckt."
+    favicon_light = "images/favicon_light.png"
+    favicon_dark = "images/favicon_dark.png"

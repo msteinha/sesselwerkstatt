@@ -44,6 +44,15 @@
   cursor: pointer;
 }
 
+#enlargedImage {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#enlargedImage.fade {
+  opacity: 0;
+}
+
 /* Close button styling */
 .close {
   position: fixed; /* Changed from absolute to fixed */
