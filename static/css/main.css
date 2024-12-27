@@ -311,3 +311,36 @@ footer {
 div {
   line-height: initial;
 }
+
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Hide buttons on touch devices/small screens */
+@media (max-width: 480px) and (hover: none) and (pointer: coarse) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

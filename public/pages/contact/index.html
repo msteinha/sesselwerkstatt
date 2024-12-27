@@ -67,8 +67,8 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="no-underline custom-font-red-90 font-Thasadith" href="/" title="Home Seite">
-              Home
+            <a class="no-underline custom-font-red-90 font-Thasadith" href="/" title="Sesselwerkstatt Seite">
+              Sesselwerkstatt
             </a>
           </li>
           
@@ -113,13 +113,13 @@
   </div>
   
   
+  
   <div class="flex-l center" style="background-color: #f5ebe1;">
     <div class="center cf pv3 ph3 ph4-ns mw8 content-flex">
-      <div class="w-50-l pl3 ph0">
-        <img src="https://sesselwerkstatt.com/images/papa_contact.jpg" alt="Kontaktbild" style="object-fit: cover;" loading="lazy">
+      <div class="w-50-l pl3 ph0 content-div">
+        <img src="https://sesselwerkstatt.com/images/papa_contact.jpg" alt="Kontaktbild" style="object-fit: cover; height: 100%;" loading="lazy">
       </div>
-
-      <div class="nested-copy-line-height lh-copy f4 nested-links ph3 mid-gray w-50-l w-100-m" style="background-color: #633331">
+      <div class="nested-copy-line-height lh-copy f4 nested-links ph3 mid-gray w-50-l w-100-m content-div" style="background-color: #633331">
         
 
 
@@ -153,20 +153,25 @@
   <style>
      
      
-    .content-flex {
-      display: flex;
-      flex-wrap: wrap;
-    }
+  .content-flex {
+    display: flex;
+    min-height: 500px;  
+  }
 
-     
-    @media screen and (max-width: 768px) {
-      .content-flex {
-        flex-direction: column;
-      }
-      .w-50-l {
-        width: 100%;
-      }
+  .content-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    .content-flex {
+      flex-direction: column;
     }
+    .content-div {
+      width: 100%;
+    }
+  }
   </style>
 
       </main>

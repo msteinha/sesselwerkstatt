@@ -11,7 +11,7 @@ theme = 'ananke'
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "Sesselwerkstatt"
     url = "/"
     weight = 1
 

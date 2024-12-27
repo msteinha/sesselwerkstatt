@@ -66,8 +66,8 @@
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="no-underline custom-font-red-90 font-Thasadith" href="/" title="Home Seite">
-              Home
+            <a class="no-underline custom-font-red-90 font-Thasadith" href="/" title="Sesselwerkstatt Seite">
+              Sesselwerkstatt
             </a>
           </li>
           
@@ -331,10 +331,12 @@
         
         </div>
       </div>
+      
       <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
+        <button class="nav-btn prev" onclick="event.stopPropagation(); navigateImage(-1)">&#10094;</button>
         <img class="modal-content" id="enlargedImage" loading="lazy">
-        
+        <button class="nav-btn next" onclick="event.stopPropagation(); navigateImage(1)">&#10095;</button>
       </div>
       <div style="text-align: center;">
         <p class="f4 lh-copy mw7 center" style="text-align: center;">Sie haben Interesse an einem Sessel, oder möchten einen Sessel restaurieren lassen? Kontaktieren Sie mich.</p>
@@ -344,25 +346,51 @@
   </div>
   
   <script>
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.getElementById('imageModal').addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.getElementById('imageModal').addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchEndX - touchStartX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          
+          navigateImage(-1);
+        } else {
+          
+          navigateImage(1);
+        }
+      }
+    }
+    let currentImageIndex = 0;
+    const images = Array.from(document.querySelectorAll('.img-responsive')).map(img => img.src);
+
     function openModal(image) {
       var modal = document.getElementById("imageModal");
       var modalImg = document.getElementById("enlargedImage");
-      
-      modal.style.display = "flex"; 
+      modal.style.display = "flex";
       modalImg.src = image.src;
+      currentImageIndex = images.indexOf(image.src);
+    }
+
+    function navigateImage(direction) {
+      currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+      document.getElementById("enlargedImage").src = images[currentImageIndex];
     }
 
     function closeModal() {
-      var modal = document.getElementById("imageModal");
-      modal.style.display = "none";
+      document.getElementById("imageModal").style.display = "none";
     }
-
-    
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
-        closeModal();
-      }
-    });
   </script>
 
       </main>
