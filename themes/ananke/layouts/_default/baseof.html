@@ -56,13 +56,13 @@
     {{ end }}
 	{{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}
   </head>
-
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
-
-    {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
-    <main class="pb7" role="main">
-      {{ block "main" . }}{{ end }}
-    </main>
-    {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+    <div class="page-wrapper" style="display: flex; flex-direction: column; min-height: 100vh; background-color: #f5ebe1;">
+      {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+      <main class="flex-grow" role="main">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+    </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
-{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "header" }}
+  {{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
   <head>
     <link rel="stylesheet" href="{{$.Site.BaseURL}}/css/main.css">
@@ -7,9 +8,8 @@
   <!-- Main Content Section -->
   <div class="center" style="background-color: #f5ebe1;">
     <div class="center mw8 ph3 pv3" style="line-height: 1.0">
-      <h1>
-        This is not the page you were looking for
-      </h1>
+      <h2>Diese Seite existiert nicht.</h2>
+      <a href="{{$.Site.BaseURL}}" class="btn btn-primary" style="display: inline-block; margin-top: 20px;">Zurück zur Startseite</a>
   </div>
   </div>
 {{ end }}
