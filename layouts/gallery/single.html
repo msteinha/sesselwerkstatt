@@ -25,7 +25,7 @@
           {{ range $imgIndex, $image := $images }}
           {{ if eq (mod $imgIndex $columns) $colIndex }}
           <div class="pa2">
-            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content img-responsive" onclick="openModal(this)">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $image.Name }}" class="modal-content img-responsive" onclick="openModal(this)" loading="lazy">
           </div>
           {{ end }}
           {{ end }}
@@ -33,10 +33,6 @@
         {{ end }}
         </div>
       </div>
-      <!-- <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="enlargedImage" loading="lazy">
-      </div> -->
       <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close">&times;</span>
         <button class="nav-btn prev" onclick="event.stopPropagation(); navigateImage(-1)">&#10094;</button>
