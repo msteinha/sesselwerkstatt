@@ -10,6 +10,21 @@
     <p class="f4 lh-copy mw7 center" style="text-align: center;">{{ .Params.description | default "Your custom subtitle or description here." }}</p>
   </div>
 
+  <!-- Before / After Section -->
+  {{ with site.Data.before_after }}
+  <div style="background-color: #f5ebe1;">
+    <div class="center cf ph3 pv4 mw8 tc">
+      <h2>Vorher / Nachher</h2>
+      <p class="f4 lh-copy mw7 center" style="text-align: center;">Ziehen Sie den Regler, um die Verwandlung zu sehen.</p>
+      <div class="ba-grid">
+        {{ range . }}
+          {{ partial "before-after.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
   <!-- Main Content Section -->
   <div class="flex-l center" style="background-color: #f5ebe1;">
     <!-- <article class="center cf pv4 ph3 mw8"> -->
@@ -101,6 +116,14 @@
     function closeModal() {
       document.getElementById("imageModal").style.display = "none";
     }
+
+    // Before/after sliders: each range input drives its slider's --pos variable.
+    document.querySelectorAll('.ba-range').forEach(function (range) {
+      var slider = range.closest('.ba-slider');
+      var update = function () { slider.style.setProperty('--pos', range.value + '%'); };
+      range.addEventListener('input', update);
+      update();
+    });
   </script>
 {{ end }}
 

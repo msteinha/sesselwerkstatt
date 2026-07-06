@@ -1,0 +1,14 @@
+# Vorher/Nachher-Vergleiche für die Projekte-Seite.
+#
+# So fügen Sie ein neues Bildpaar hinzu:
+#   1. Legen Sie zwei Fotos (gleiches Möbelstück, möglichst gleicher
+#      Blickwinkel/Ausschnitt und gleiches Seitenverhältnis) im Ordner
+#      assets/images/gallery/before-after/ ab.
+#   2. Ergänzen Sie hier einen neuen Block nach dem Muster unten.
+#   Es sind keine weiteren Änderungen am Code nötig.
+
+- before: images/gallery/before-after/Geflecht_final_6_vorher.jpg
+  after: images/gallery/before-after/Geflecht_final_6.jpg
+  before_alt: "Wiener-Geflecht-Sitzfläche vor der Neuanfertigung"
+  after_alt: "Stuhl mit frisch geflochtenem Wiener Geflecht"
+  caption: "Wiener Geflecht – von Grund auf neu geflochten"

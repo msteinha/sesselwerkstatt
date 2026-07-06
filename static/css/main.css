@@ -354,3 +354,135 @@ div {
 .nav-btn:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+/* ---------- Before / After comparison slider ---------- */
+.ba-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.ba-figure {
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.ba-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  touch-action: pan-y;
+  background-color: #633331;
+}
+
+.ba-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+/* "after" sits on top and is revealed on the right of the handle */
+.ba-after {
+  clip-path: inset(0 0 0 var(--pos));
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  background: #fff;
+  transform: translateX(-1px);
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.ba-handle::after {
+  content: "\2194"; /* ↔ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: #fff;
+  color: #633331;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Full-size transparent range input captures drag/touch/keyboard */
+.ba-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: ew-resize;
+}
+
+.ba-range:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.ba-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.4rem;
+  height: 100%;
+  cursor: ew-resize;
+}
+
+.ba-range::-moz-range-thumb {
+  width: 2.4rem;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 10px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.ba-label-before {
+  left: 10px;
+}
+
+.ba-label-after {
+  right: 10px;
+}
+
+.ba-caption {
+  margin: 0.75rem 0 0;
+  font-size: 1.1rem;
+  color: #633331;
+}
