@@ -1,0 +1,23 @@
+{{/*
+  Renders a single before/after comparison slider.
+  Context (.) is one entry from data/before_after.yaml:
+    { before, after, before_alt, after_alt, caption }
+*/}}
+{{ $before := resources.Get .before }}
+{{ $after := resources.Get .after }}
+{{ if and $before $after }}
+  {{ $b := $before.Resize "900x webp q75" }}
+  {{ $a := $after.Resize "900x webp q75" }}
+  <figure class="ba-figure">
+    <div class="ba-slider" style="--pos: 50%; aspect-ratio: {{ $a.Width }} / {{ $a.Height }};">
+      <img class="ba-before" src="{{ $b.RelPermalink }}" width="{{ $b.Width }}" height="{{ $b.Height }}" alt="{{ .before_alt }}" loading="lazy" draggable="false">
+      <img class="ba-after" src="{{ $a.RelPermalink }}" width="{{ $a.Width }}" height="{{ $a.Height }}" alt="{{ .after_alt }}" loading="lazy" draggable="false">
+      <span class="ba-label ba-label-before">Vorher</span>
+      <span class="ba-label ba-label-after">Nachher</span>
+      <div class="ba-handle" aria-hidden="true"></div>
+      <input type="range" class="ba-range" min="0" max="100" value="50" step="1"
+             aria-label="{{ .caption | default "Vorher-Nachher-Vergleich" }} – Schieberegler">
+    </div>
+    {{ with .caption }}<figcaption class="ba-caption font-Thasadith">{{ . }}</figcaption>{{ end }}
+  </figure>
+{{ end }}
