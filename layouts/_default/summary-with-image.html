@@ -20,7 +20,7 @@
       <!-- Image Block -->
       {{ if $featured_image }}
         <div class="w-100 w-50-l mb0 mb0-ns">
-          <img src="{{ $featured_image }}" alt="image from {{ .Title }}"
+          <img src="{{ $featured_image }}" alt="{{ .Title }}"
                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
       {{ end }}

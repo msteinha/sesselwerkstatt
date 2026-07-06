@@ -1,8 +1,9 @@
 baseURL = 'https://sesselwerkstatt.com'
-languageCode = 'en-us'
+languageCode = 'de-AT'
 defaultContentLanguage = 'de'
 title = 'Sesselwerkstatt'
 theme = 'ananke'
+enableRobotsTXT = true
 
 [markup]
   [markup.goldmark]
@@ -30,3 +31,9 @@ theme = 'ananke'
     description = "Wiener Geflecht - Bespannung: in Handarbeit und mit hochwertigen Materialien werden alte Möbel zu neuem Leben erweckt."
     favicon_light = "images/favicon_light.png"
     favicon_dark = "images/favicon_dark.png"
+    legalName = "Sesselwerkstatt"
+    streetAddress = "Bahnstraße 22"
+    postalCode = "3580"
+    addressLocality = "Horn"
+    addressCountry = "AT"
+    email = "info@sesselwerkstatt.com"

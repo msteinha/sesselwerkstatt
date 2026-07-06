@@ -5,5 +5,6 @@ description: "Mit Liebe zum Detail erwecke ich alte Sessel zu neuem Leben. In Ha
 theme_version: '2.8.2'
 cascade:
   featured_image: '/images/title_pic.JPG'
+  featured_image_alt: 'Restaurierter Stuhl und Beistelltisch im herbstlichen Garten'
 ---
 

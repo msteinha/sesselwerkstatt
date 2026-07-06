@@ -1,0 +1,15 @@
+{{ $data := dict
+  "@context" "https://schema.org"
+  "@type" "ProfessionalService"
+  "name" .Site.Params.legalName
+  "url" .Site.BaseURL
+  "email" .Site.Params.email
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" .Site.Params.streetAddress
+    "postalCode" .Site.Params.postalCode
+    "addressLocality" .Site.Params.addressLocality
+    "addressCountry" .Site.Params.addressCountry
+  )
+}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>
