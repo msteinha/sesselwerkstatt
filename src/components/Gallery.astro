@@ -1,0 +1,181 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Picture, getImage } from 'astro:assets';
+
+interface Props {
+  images: { src: ImageMetadata; alt: string }[];
+}
+
+const { images } = Astro.props;
+const items = await Promise.all(
+  images.map(async (image) => ({
+    ...image,
+    full: await getImage({ src: image.src, width: 1600, format: 'webp', quality: 80 }),
+  })),
+);
+---
+
+<ul class="gallery" data-gallery>
+  {
+    items.map(({ src, alt, full }) => (
+      <li>
+        <a href={full.src} data-full={full.src} data-alt={alt}>
+          <Picture
+            src={src}
+            alt={alt}
+            widths={[400, 700]}
+            sizes="(min-width: 60rem) 30vw, (min-width: 36rem) 45vw, 100vw"
+            formats={['avif', 'webp']}
+            loading="lazy"
+          />
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<dialog class="lightbox" aria-label="Bildansicht">
+  <img src="" alt="" />
+  <button type="button" class="lb-close" aria-label="Schließen">&times;</button>
+  <button type="button" class="lb-prev" aria-label="Vorheriges Bild">&#10094;</button>
+  <button type="button" class="lb-next" aria-label="Nächstes Bild">&#10095;</button>
+</dialog>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((gallery) => {
+    const dialog = gallery.nextElementSibling as HTMLDialogElement;
+    const img = dialog.querySelector('img')!;
+    const links = Array.from(gallery.querySelectorAll<HTMLAnchorElement>('a[data-full]'));
+    let current = 0;
+
+    const show = (index: number) => {
+      current = (index + links.length) % links.length;
+      img.src = links[current].dataset.full!;
+      img.alt = links[current].dataset.alt ?? '';
+    };
+
+    links.forEach((link, index) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        show(index);
+        dialog.showModal();
+      });
+    });
+
+    const single = links.length < 2;
+    dialog.querySelectorAll<HTMLButtonElement>('.lb-prev, .lb-next').forEach((b) => (b.hidden = single));
+    dialog.querySelector('.lb-close')!.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.lb-prev')!.addEventListener('click', () => show(current - 1));
+    dialog.querySelector('.lb-next')!.addEventListener('click', () => show(current + 1));
+    // Klick auf den dunklen Hintergrund schließt.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(current - 1);
+      if (event.key === 'ArrowRight') show(current + 1);
+    });
+
+    let touchStartX = 0;
+    dialog.addEventListener('touchstart', (e) => (touchStartX = e.changedTouches[0].screenX), { passive: true });
+    dialog.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (!single && Math.abs(diff) > 50) show(current + (diff > 0 ? -1 : 1));
+    });
+  });
+</script>
+
+<style>
+  .gallery {
+    columns: 3 16rem;
+    column-gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gallery li {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .gallery a {
+    display: block;
+    cursor: zoom-in;
+  }
+
+  .gallery :global(img) {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .lightbox {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(0 0 0 / 0.9);
+  }
+
+  .lightbox[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox::backdrop {
+    background: rgb(0 0 0 / 0.9);
+  }
+
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .lightbox button {
+    position: fixed;
+    border: 0;
+    background: rgb(0 0 0 / 0.5);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.8rem 1rem;
+  }
+
+  .lightbox button:hover {
+    background: rgb(0 0 0 / 0.8);
+  }
+
+  .lb-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem !important;
+    line-height: 1;
+  }
+
+  .lb-prev,
+  .lb-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lb-prev {
+    left: 1rem;
+  }
+
+  .lb-next {
+    right: 1rem;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .lb-prev,
+    .lb-next {
+      display: none;
+    }
+  }
+</style>

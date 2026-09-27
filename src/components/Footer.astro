@@ -1,0 +1,62 @@
+---
+import { site } from '../lib/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <address>
+      <strong>{site.name}</strong><br />
+      {site.owner}<br />
+      {site.streetAddress}, {site.postalCode} {site.addressLocality}<br />
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      {site.phone && <><br /><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></>}
+    </address>
+    <ul>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/leistungen/">Leistungen</a></li>
+      <li><a href="/kontakt/">Kontakt</a></li>
+      <li><a href="/impressum/">Impressum</a></li>
+      <li><a href="/datenschutz/">Datenschutzerklärung</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--red);
+    color: var(--cream);
+    padding-block: 2rem;
+    font-size: 1rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+</style>

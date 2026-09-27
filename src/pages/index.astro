@@ -1,0 +1,222 @@
+---
+import { Picture, Image } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site, getProjects, getServices } from '../lib/site';
+import hero from '../assets/site/hero-sessel-garten.jpg';
+import wald from '../assets/site/wald.png';
+import hocker from '../assets/site/hocker-herbstlaub.jpg';
+import lehne from '../assets/site/stuhllehne-garten.jpg';
+import geflecht from '../assets/site/wiener-geflecht-detail.jpg';
+
+const featured = (await getProjects()).filter((p) => p.data.featured).slice(0, 3);
+const services = await Promise.all(
+  (await getServices()).map(async (service) => ({ ...service, Content: (await render(service)).Content })),
+);
+const [firstService, ...otherServices] = services;
+const strip = [
+  { src: hocker, alt: 'Restaurierter Hocker mit gemustertem Bezug im Herbstlaub' },
+  { src: lehne, alt: 'Detailaufnahme einer geschwungenen Stuhllehne im Garten' },
+  { src: geflecht, alt: 'Nahaufnahme von handgeflochtenem Wiener Geflecht' },
+];
+---
+
+<BaseLayout
+  description="Sesselwerkstatt in Horn (Niederösterreich): Restaurierung von Sesseln und Stühlen, Wiener Geflecht, Polsterung und Bespannung in Handarbeit."
+>
+  <section class="hero">
+    <h1>
+      <span class="hero-title">{site.name}</span>
+      <span class="hero-sub">Wiener Geflecht · Polsterung · Restaurierung in Horn</span>
+    </h1>
+    <div class="hero-circle">
+      <Picture
+        src={hero}
+        alt="Restaurierter Stuhl und Beistelltisch im herbstlichen Garten"
+        widths={[300, 600]}
+        sizes="300px"
+        formats={['avif', 'webp']}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <p class="hero-text">{site.description}</p>
+  </section>
+
+  <div class="column">
+    {
+      firstService && (
+        <article class="service">
+          <div class="service-text">
+            <h2>{firstService.data.title}</h2>
+            <firstService.Content />
+            <a class="button" href={`/leistungen/${firstService.id}/`}>Projekte ansehen</a>
+          </div>
+          <Image src={firstService.data.image} alt={firstService.data.imageAlt} widths={[500, 900]} sizes="(min-width: 60rem) 28rem, 100vw" format="webp" loading="lazy" />
+        </article>
+      )
+    }
+
+    <section class="strip" aria-label="Eindrücke aus der Werkstatt">
+      <Image class="strip-bg" src={wald} alt="" widths={[600, 1200]} sizes="(min-width: 60rem) 56rem, 100vw" format="webp" loading="lazy" />
+      {strip.map((img) => <Image src={img.src} alt={img.alt} widths={[300, 600]} sizes="(min-width: 60rem) 17rem, 30vw" format="webp" loading="lazy" />)}
+    </section>
+
+    {
+      otherServices.map((service) => (
+        <article class="service">
+          <div class="service-text">
+            <h2>{service.data.title}</h2>
+            <service.Content />
+            <a class="button" href={`/leistungen/${service.id}/`}>Projekte ansehen</a>
+          </div>
+          <Image src={service.data.image} alt={service.data.imageAlt} widths={[500, 900]} sizes="(min-width: 60rem) 28rem, 100vw" format="webp" loading="lazy" />
+        </article>
+      ))
+    }
+  </div>
+
+  {
+    featured.length > 0 && (
+      <section class="section" aria-labelledby="projekte">
+        <div class="container">
+          <h2 id="projekte" class="center">Ausgewählte Projekte</h2>
+          <ul class="card-grid">
+            {featured.map((project) => (
+              <li>
+                <ProjectCard project={project} />
+              </li>
+            ))}
+          </ul>
+          <p class="center more">
+            <a class="button" href="/projekte/">Alle Projekte</a>
+          </p>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  /* Kopfbereich: Titel auf Creme, rundes Bild genau auf der Kante zu Rot, Text hell auf Rot. */
+  .hero h1 {
+    margin: 0;
+    padding: clamp(2rem, 6vw, 4rem) var(--gutter) 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .hero-sub {
+    display: block;
+    margin-top: 0.6rem;
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.15rem);
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+  }
+
+  .hero-circle {
+    background: linear-gradient(to bottom, var(--cream) 50%, var(--red) 50%);
+  }
+
+  .hero-circle :global(img) {
+    width: min(300px, 70vw);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .hero-text {
+    margin: 0;
+    padding: 1.5rem var(--gutter) 2rem;
+    padding-inline: max(var(--gutter), (100% - 36rem) / 2);
+    background: var(--red);
+    color: var(--cream);
+    text-align: justify;
+    hyphens: auto;
+    letter-spacing: 0.08em;
+  }
+
+  /* Schmale Mittelspalte wie im Original: Text links, Bild rechts, bündig aneinander. */
+  .column {
+    width: 100%;
+    max-width: 56rem;
+    margin-inline: auto;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem var(--gutter);
+  }
+
+  .service-text :global(p) {
+    text-align: justify;
+    hyphens: auto;
+    letter-spacing: 0.06em;
+  }
+
+  .service :global(img) {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  @media (min-width: 60rem) {
+    .service {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .service-text,
+    .service :global(img) {
+      width: 50%;
+    }
+
+    .service-text {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .strip {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: min(70vh, 40rem);
+    min-height: 22rem;
+    overflow: hidden;
+  }
+
+  .strip :global(.strip-bg) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .strip > :global(img:not(.strip-bg)) {
+    position: relative;
+    width: 30%;
+    height: 60%;
+    object-fit: cover;
+  }
+
+  .more {
+    margin-top: 2rem;
+  }
+</style>

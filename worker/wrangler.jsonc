@@ -1,0 +1,17 @@
+{
+  // Cloudflare Worker für das Kontaktformular auf sesselwerkstatt.com.
+  // Nimmt POST /api/kontakt entgegen und verschickt die Nachricht über Cloudflare Email Routing.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sesselwerkstatt-kontakt",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "routes": [{ "pattern": "sesselwerkstatt.com/api/kontakt*", "zone_name": "sesselwerkstatt.com" }],
+  "send_email": [{ "name": "MAILER" }],
+  "vars": {
+    // Absender muss eine Adresse der Domain sein (muss kein echtes Postfach sein).
+    "MAIL_FROM": "website@sesselwerkstatt.com",
+    "SITE": "https://sesselwerkstatt.com"
+  }
+  // Secret (nicht im Repo): MAIL_TO = die in Email Routing verifizierte Zieladresse,
+  // setzen mit: npx wrangler secret put MAIL_TO
+}
