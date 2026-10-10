@@ -1,0 +1,99 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getProjects, getServices, breadcrumbJsonLd, absolute, site } from '../../lib/site';
+
+export const getStaticPaths = (async () => {
+  const services = await getServices();
+  const projects = await getProjects();
+  return services.map((service) => ({
+    params: { id: service.id },
+    props: { service, projects: projects.filter((p) => p.data.category === service.data.category) },
+  }));
+}) satisfies GetStaticPaths;
+
+const { service, projects } = Astro.props;
+const { data } = service;
+const { Content } = await render(service);
+
+const crumbs = [
+  { name: 'Start', href: '/' },
+  { name: 'Leistungen', href: '/leistungen/' },
+  { name: data.title, href: `/leistungen/${service.id}/` },
+];
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: data.title,
+  serviceType: data.title,
+  description: data.summary,
+  provider: { '@id': absolute('/#business', Astro.site) },
+  areaServed: site.areaServed,
+  url: absolute(`/leistungen/${service.id}/`, Astro.site),
+};
+---
+
+<BaseLayout
+  title={`${data.title} in Horn`}
+  description={data.summary}
+  image={data.image}
+  imageAlt={data.imageAlt}
+  jsonLd={[serviceJsonLd, breadcrumbJsonLd(crumbs, Astro.site)]}
+>
+  <article class="section">
+    <div class="container">
+      <Breadcrumbs items={crumbs} />
+      <div class="head">
+        <div>
+          <h1>{data.title}</h1>
+          <div class="prose"><Content /></div>
+          <a class="button" href="/kontakt/">Anfrage senden</a>
+        </div>
+        <Image src={data.image} alt={data.imageAlt} widths={[480, 900]} sizes="(min-width: 56rem) 34rem, 100vw" format="webp" loading="eager" fetchpriority="high" />
+      </div>
+
+      {
+        projects.length > 0 && (
+          <section class="projects" aria-labelledby="projekte">
+            <h2 id="projekte">Projekte: {data.title}</h2>
+            <ul class="card-grid">
+              {projects.map((project) => (
+                <li>
+                  <ProjectCard project={project} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .head {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 56rem) {
+    .head {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .head :global(img) {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .projects {
+    margin-top: 3.5rem;
+  }
+</style>

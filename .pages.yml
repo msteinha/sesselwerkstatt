@@ -1,0 +1,175 @@
+# Konfiguration für Pages CMS (https://pagescms.org).
+# Legt fest, welche Inhalte die Redaktion unter app.pagescms.org bearbeiten kann.
+# Die Felder müssen zum Schema in src/content.config.ts passen.
+
+media:
+  input: src/assets/projekte
+  output: ../../assets/projekte
+
+content:
+  - name: projekte
+    label: Projekte
+    type: collection
+    path: src/content/projekte
+    filename: "{primary}.md"
+    view:
+      fields: [title, category, featured, draft]
+      primary: title
+      sort: [title]
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+        description: z. B. „Bugholzstuhl mit neuem Wiener Geflecht“. Wird Überschrift und Seitentitel bei Google.
+      - name: category
+        label: Kategorie
+        type: select
+        required: true
+        options:
+          values:
+            - value: wiener-geflecht
+              label: Wiener Geflecht
+            - value: polsterung
+              label: Polsterung & Bespannung
+            - value: holz
+              label: Holzrestaurierung
+      - name: date
+        label: Datum
+        type: date
+        required: true
+      - name: summary
+        label: Kurzbeschreibung
+        type: text
+        required: true
+        description: 1–2 Sätze (max. 200 Zeichen). Erscheint unter der Überschrift und als Beschreibung bei Google.
+      - name: cover
+        label: Titelbild
+        type: image
+        required: true
+      - name: coverAlt
+        label: Titelbild – Bildbeschreibung
+        type: string
+        required: true
+        description: Was ist auf dem Bild zu sehen? Wichtig für Google und für blinde Besucher.
+      - name: images
+        label: Weitere Bilder
+        type: object
+        list: true
+        fields:
+          - name: src
+            label: Bild
+            type: image
+            required: true
+          - name: alt
+            label: Bildbeschreibung
+            type: string
+            required: true
+      - name: before
+        label: Vorher-Bild (optional)
+        type: image
+        description: Nur zusammen mit einem Nachher-Bild. Beide Fotos möglichst aus dem gleichen Blickwinkel.
+      - name: beforeAlt
+        label: Vorher-Bild – Bildbeschreibung
+        type: string
+      - name: after
+        label: Nachher-Bild (optional)
+        type: image
+      - name: afterAlt
+        label: Nachher-Bild – Bildbeschreibung
+        type: string
+      - name: featured
+        label: Auf der Startseite zeigen
+        type: boolean
+        default: false
+      - name: draft
+        label: Entwurf (noch nicht veröffentlichen)
+        type: boolean
+        default: false
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: leistungen
+    label: Leistungen
+    type: collection
+    path: src/content/leistungen
+    filename: "{primary}.md"
+    view:
+      fields: [title, order]
+      primary: title
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: category
+        label: Kategorie (bestimmt, welche Projekte angezeigt werden)
+        type: select
+        required: true
+        options:
+          values:
+            - value: wiener-geflecht
+              label: Wiener Geflecht
+            - value: polsterung
+              label: Polsterung & Bespannung
+            - value: holz
+              label: Holzrestaurierung
+      - name: order
+        label: Reihenfolge
+        type: number
+        required: true
+      - name: summary
+        label: Kurzbeschreibung
+        type: text
+        required: true
+      - name: image
+        label: Bild
+        type: image
+        required: true
+      - name: imageAlt
+        label: Bildbeschreibung
+        type: string
+        required: true
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: seiten
+    label: Impressum & Datenschutz
+    type: collection
+    path: src/content/seiten
+    view:
+      fields: [title]
+      primary: title
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: description
+        label: Beschreibung (für Google)
+        type: string
+        required: true
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: kontaktdaten
+    label: Kontaktdaten
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: name, label: Name der Werkstatt, type: string, required: true }
+      - { name: tagline, label: Untertitel (Seitentitel der Startseite), type: string, required: true }
+      - { name: description, label: Einleitungstext Startseite, type: text, required: true }
+      - { name: owner, label: Inhaber, type: string, required: true }
+      - { name: email, label: E-Mail, type: string, required: true }
+      - { name: phone, label: Telefon (optional), type: string }
+      - { name: streetAddress, label: Straße, type: string, required: true }
+      - { name: postalCode, label: PLZ, type: string, required: true }
+      - { name: addressLocality, label: Ort, type: string, required: true }
+      - { name: addressRegion, label: Bundesland, type: string, required: true }
+      - { name: addressCountry, label: Land (Ländercode), type: string, required: true }
+      - { name: areaServed, label: Einzugsgebiet, type: string, list: true }

@@ -1,0 +1,21 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  id: string;
+}
+
+const entry = await getEntry('seiten', Astro.props.id);
+if (!entry) throw new Error(`Seite "${Astro.props.id}" fehlt in src/content/seiten/`);
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <article class="section">
+    <div class="container narrow prose">
+      <h1>{entry.data.title}</h1>
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
