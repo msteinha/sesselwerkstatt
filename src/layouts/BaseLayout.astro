@@ -1,0 +1,80 @@
+---
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import heroImage from '../assets/site/hero-sessel-garten.jpg';
+import { site, absolute, businessJsonLd } from '../lib/site';
+import '../styles/global.css';
+
+interface Props {
+  /** Page title without the site name. Omit on the home page. */
+  title?: string;
+  description: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: object[];
+}
+
+const {
+  title,
+  description,
+  image = heroImage,
+  imageAlt = 'Restaurierter Stuhl und Beistelltisch im herbstlichen Garten',
+  ogType = 'website',
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} – ${site.tagline}`;
+const canonical = absolute(Astro.url.pathname, Astro.site);
+const ogImage = await getImage({ src: image, width: 1200, format: 'jpeg', quality: 80 });
+const ogImageUrl = absolute(ogImage.src, Astro.site);
+const heroOg = image === heroImage ? ogImageUrl : absolute((await getImage({ src: heroImage, width: 1200, format: 'jpeg' })).src, Astro.site);
+const structuredData = [businessJsonLd(Astro.site, heroOg), ...jsonLd];
+---
+
+<!doctype html>
+<html lang="de-AT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <link rel="icon" href="/images/favicon-light.png" media="(prefers-color-scheme: light)" type="image/png" />
+    <link rel="icon" href="/images/favicon-dark.png" media="(prefers-color-scheme: dark)" type="image/png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#633331" />
+
+    <link rel="preload" href="/fonts/TCBrookleigh.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Thasadith-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="de_AT" />
+    <meta property="og:title" content={title ?? fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content={String(ogImage.attributes.width)} />
+    <meta property="og:image:height" content={String(ogImage.attributes.height)} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {structuredData.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+    <Header />
+    <main id="inhalt">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

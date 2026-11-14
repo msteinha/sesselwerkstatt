@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { categories } from '../../content.config';
+import { getProjects, getServices } from '../../lib/site';
+
+const projects = await getProjects();
+const services = await getServices();
+const usedCategories = Object.entries(categories).filter(([key]) => projects.some((p) => p.data.category === key));
+---
+
+<BaseLayout
+  title="Projekte"
+  description="Restaurierte Sessel und Stühle aus der Sesselwerkstatt in Horn: Wiener Geflecht, neue Polsterungen und aufgearbeitetes Bugholz – mit Vorher-Nachher-Bildern."
+  image={projects[0]?.data.cover}
+  imageAlt={projects[0]?.data.coverAlt}
+>
+  <section class="section">
+    <div class="container">
+      <header class="center intro">
+        <h1>Meine Projekte</h1>
+        <p class="lead">Ein Auszug aus meinen Projekten. Aus Alt mach Neu.</p>
+      </header>
+
+      {
+        usedCategories.map(([key, label]) => {
+          const inCategory = projects.filter((p) => p.data.category === key);
+          const service = services.find((s) => s.data.category === key);
+          return (
+            <section class="category" aria-labelledby={`kat-${key}`}>
+              <div class="category-head">
+                <h2 id={`kat-${key}`}>{label}</h2>
+                {service && <a href={`/leistungen/${service.id}/`}>Mehr zur Leistung</a>}
+              </div>
+              <ul class="card-grid">
+                {inCategory.map((project) => (
+                  <li>
+                    <ProjectCard project={project} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })
+      }
+
+      <div class="center cta">
+        <p class="lead">Sie haben Interesse an einem Sessel, oder möchten einen Sessel restaurieren lassen? Kontaktieren Sie mich.</p>
+        <a class="button" href="/kontakt/">Anfrage senden</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro {
+    margin-bottom: 2rem;
+  }
+
+  .category {
+    margin-top: 3rem;
+  }
+
+  .category-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-head h2 {
+    margin: 0;
+  }
+
+  .cta {
+    margin-top: 4rem;
+  }
+</style>

@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'TCBrookleigh';
+  src: url('/fonts/TCBrookleigh.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thasadith';
+  src: url('/fonts/Thasadith-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --red: #633331;
+  --red-light: #aa5b5b;
+  --cream: #f5ebe1;
+  --cream-dark: #eadccd;
+  --font-display: 'TCBrookleigh', Georgia, serif;
+  --font-body: 'Thasadith', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --max: 72rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --radius: 4px;
+  --shadow: 0 4px 14px rgb(0 0 0 / 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw + 1.2rem, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.5rem);
+}
+
+h3,
+h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--red-light);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.narrow {
+  max-width: 46rem;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.section-dark {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.center {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.15em;
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  background: var(--cream);
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button:hover {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.button-light {
+  border-color: var(--cream);
+  background: transparent;
+  color: var(--cream);
+}
+
+.button-light:hover {
+  background: var(--cream);
+  color: var(--red);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--red);
+  color: var(--cream);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Fließtext aus Markdown */
+.prose h3 {
+  margin-top: 2em;
+}
+
+.prose ul {
+  padding-left: 1.2em;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

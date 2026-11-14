@@ -1,0 +1,76 @@
+---
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { categories } from '../content.config';
+
+interface Props {
+  project: CollectionEntry<'projekte'>;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { project, headingLevel: Heading = 'h3' } = Astro.props;
+const { title, cover, coverAlt, category, before } = project.data;
+---
+
+<article class="card">
+  <a href={`/projekte/${project.id}/`}>
+    <Picture
+      src={cover}
+      alt={coverAlt}
+      widths={[400, 600, 800]}
+      sizes="(min-width: 72rem) 22rem, (min-width: 40rem) 45vw, 100vw"
+      formats={['avif', 'webp']}
+      loading="lazy"
+    />
+    <div class="card-body">
+      <p class="meta">
+        {categories[category]}{before && ' · Vorher/Nachher'}
+      </p>
+      <Heading>{title}</Heading>
+    </div>
+  </a>
+</article>
+
+<style>
+  .card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .card a:hover {
+    transform: translateY(-3px);
+  }
+
+  .card :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 1rem 1.2rem 1.2rem;
+  }
+
+  .meta {
+    margin: 0 0 0.3rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red-light);
+  }
+
+  h2,
+  h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+</style>

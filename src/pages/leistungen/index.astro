@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getServices } from '../../lib/site';
+
+const services = await getServices();
+---
+
+<BaseLayout
+  title="Leistungen"
+  description="Wiener Geflecht, Polsterung & Bespannung und Holzrestaurierung: Leistungen der Sesselwerkstatt in Horn für alte Sessel, Stühle und Bugholzmöbel."
+>
+  <section class="section">
+    <div class="container">
+      <header class="center">
+        <h1>Leistungen</h1>
+        <p class="lead">In Handarbeit und mit hochwertigen Materialien werden alte Möbel zu neuem Leben erweckt.</p>
+      </header>
+      <ul class="card-grid services">
+        {
+          services.map((s) => (
+            <li>
+              <a href={`/leistungen/${s.id}/`}>
+                <Image src={s.data.image} alt={s.data.imageAlt} widths={[400, 700]} sizes="(min-width: 60rem) 22rem, 100vw" format="webp" loading="lazy" />
+                <h2>{s.data.title}</h2>
+                <p>{s.data.summary}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services {
+    margin-top: 2rem;
+  }
+
+  .services a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .services :global(img) {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  h2,
+  p {
+    padding-inline: 1.2rem;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
+</style>

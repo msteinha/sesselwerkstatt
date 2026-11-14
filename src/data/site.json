@@ -1,0 +1,19 @@
+{
+  "name": "Sesselwerkstatt",
+  "tagline": "Sesselrestaurierung, Wiener Geflecht & Polsterung in Horn",
+  "description": "Mit Liebe zum Detail erwecke ich alte Sessel zu neuem Leben. In Handarbeit erneuere ich Wiener Geflecht und Bespannungen und versehe Holz mit neuem Glanz. So entsteht zeitloses Design für Möbelstücke, die Jahrhunderte überdauern.",
+  "owner": "Ing. Herbert Steinhauser",
+  "email": "info@sesselwerkstatt.com",
+  "phone": "",
+  "streetAddress": "Bahnstraße 22",
+  "postalCode": "3580",
+  "addressLocality": "Horn",
+  "addressRegion": "Niederösterreich",
+  "addressCountry": "AT",
+  "areaServed": [
+    "Horn",
+    "Waldviertel",
+    "Niederösterreich",
+    "Wien"
+  ]
+}
