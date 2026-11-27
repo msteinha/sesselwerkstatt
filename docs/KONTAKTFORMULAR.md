@@ -26,7 +26,7 @@ Voraussetzung: Email Routing ist für sesselwerkstatt.com aktiv (ist es bereits)
    cd worker
    npm install
    npx wrangler login
-   npx wrangler secret put MAIL_TO   # die verifizierte Zieladresse eingeben
+   npx wrangler secret put MAIL_TO   # verifizierte Zieladresse(n) eingeben, mehrere durch Komma getrennt
    ```
    (Alternativ im Dashboard: *Workers & Pages → sesselwerkstatt-kontakt → Settings → Variables and Secrets*.)
 6. **Testen** – auf sesselwerkstatt.com/kontakt/ eine Nachricht schicken (nicht zu schnell 😉).

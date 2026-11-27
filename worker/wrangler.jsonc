@@ -12,6 +12,6 @@
     "MAIL_FROM": "website@sesselwerkstatt.com",
     "SITE": "https://sesselwerkstatt.com"
   }
-  // Secret (nicht im Repo): MAIL_TO = die in Email Routing verifizierte Zieladresse,
+  // Secret (nicht im Repo): MAIL_TO = eine oder mehrere (durch Komma getrennte) in Email Routing verifizierte Zieladressen,
   // setzen mit: npx wrangler secret put MAIL_TO
 }
